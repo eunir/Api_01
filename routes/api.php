@@ -41,6 +41,17 @@ Route::namespace('API')->name('api.')->group(function(){
         Route::delete('/{id}','funcionariosController@deleteFuncionarios')->name('deleteFuncionarios');
         
     });
+
+    //rotas grupo chamados
+    Route::prefix('chamados')->group(function(){
+
+        Route::get('/','chamadosController@allChamados')->name('allChamados');
+        Route::get('/{id}','chamadosController@getChamados')->name('getChamados');
+        Route::post('/','chamadosController@insertChamados')->name('insertChamados');
+        Route::put('/{id}','chamadosController@updateChamados')->name('updateChamados');
+        Route::delete('/{id}','chamadosController@deleteChamados')->name('deleteChamados');
+        
+    });
 });
 
 Route::get('/ok', function(){
