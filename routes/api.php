@@ -52,6 +52,50 @@ Route::namespace('API')->name('api.')->group(function(){
         Route::delete('/{id}','chamadosController@deleteChamados')->name('deleteChamados');
         
     });
+
+    //rotas grupo enquetes
+    Route::prefix('enquetes')->group(function(){
+
+        Route::get('/','enquetesController@allEnquetes')->name('allEnquetes');
+        Route::get('/{id}','enquetesController@getEnquetes')->name('getEnquetes');
+        Route::post('/','enquetesController@insertEnquetes')->name('insertEnquetes');
+        Route::put('/{id}','enquetesController@updateEnquetes')->name('updateEnquetes');
+        Route::delete('/{id}','enquetesController@deleteEnquetes')->name('deleteEnquetes');
+        
+    });
+
+    //rotas grupo votos
+    Route::prefix('votos')->group(function(){
+
+        Route::get('/','votosController@allVotos')->name('allVotos');
+        Route::get('/{id}','votosController@getVotos')->name('getVotos');
+        Route::post('/','votosController@insertVotos')->name('insertVotos');
+        Route::put('/{id}','votosController@updateVotos')->name('updateVotos');
+        Route::delete('/{id}','votosController@deleteVotos')->name('deleteVotos');
+        
+    });
+
+    //rotas grupo informações
+    Route::prefix('informacoes')->group(function(){
+
+        Route::get('/','informacoesController@allInformacoes')->name('allInformacoes');
+        Route::get('/{id}','informacoesController@getInformacoes')->name('getInformacoes');
+        Route::post('/','informacoesController@insertInformacoes')->name('insertInformacoes');
+        Route::put('/{id}','informacoesController@updateInformacoes')->name('updateInformacoes');
+        Route::delete('/{id}','informacoesController@deleteInformacoes')->name('deleteInformacoes');
+        
+    });
+
+    //rotas grupo documentos
+    Route::prefix('documentos')->group(function(){
+
+        Route::get('/','documentosController@allDocumentos')->name('allDocumentos');
+        Route::get('/{id}','documentosController@getDocumentos')->name('getDocumentos');
+        Route::post('/','documentosController@insertDocumentos')->name('insertDocumentos');
+        Route::put('/{id}','documentosController@updateDocumentos')->name('updateDocumentos');
+        Route::delete('/{id}','documentosController@deleteDocumentos')->name('deleteDocumentos');
+        
+    });
 });
 
 Route::get('/ok', function(){
