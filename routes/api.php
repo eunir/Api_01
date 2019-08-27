@@ -20,6 +20,13 @@ Route::middleware('auth:api')->get('/users', function (Request $request) {
 //Rotas do grupo usuários
 Route::namespace('API')->name('api.')->group(function(){
 
+    //Rotas para login
+    Route::prefix('login')->group(function(){
+
+        Route::post('/','loginControler@login');
+        
+    });
+
     //Rotas do grupo usuários
     Route::prefix('usuarios')->group(function(){
 
